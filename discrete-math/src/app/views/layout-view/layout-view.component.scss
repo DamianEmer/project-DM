@@ -19,14 +19,16 @@
     font-size: 18px;
 }
 
-#flag:checked + #side-bar{
-    -webkit-transform: translateX(-320px);
-    transform: translateX(-320px);
+#flag:checked + #side-bar,
+#flag:checked ~ #container{
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
 }
 
 #flag:checked + #container {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    -webkit-transform: translateX(320px);
+    transform: translateX(320px);
+    transition: 1s all;
 }
 
 #side-bar {
@@ -70,6 +72,8 @@
 #container {
     position: fixed;    
     top: 130px;
+    width: 100%;
+    background-color: white;
     left: 0;
     bottom: 0;
     transform: translateX(320px);
