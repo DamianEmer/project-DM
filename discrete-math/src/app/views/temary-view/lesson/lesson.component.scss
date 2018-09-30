@@ -1,0 +1,37 @@
+.lesson {
+    background-color: #ffffff;
+    width: 85%;
+    height: auto;
+    margin: 25px auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    //overflow-y: scroll;
+
+    h1 {
+        font-weight: bold;
+        color: #960e0e;
+        text-align: center;
+        font-family: 'Merriweather', serif;
+        //font-family: 'Raleway', sans-serif;
+        text-transform: uppercase;
+    }
+
+    .content {
+        h3 {
+            color: #960e0e;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 25px;
+        }
+
+        .image{
+            text-align: center;
+            border: 1px solid #bbb;
+            box-shadow: 5px 5px 25px rgb(209, 209, 209);
+            width: 70%;
+            margin: 15px auto;
+        }
+    }
+}

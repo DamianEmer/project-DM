@@ -4,6 +4,8 @@
   <fa-icon [icon]="bars" [spin]="spin" size="2x"></fa-icon>
 </label>
 <input type="checkbox" name="btn-flag" value="flag" id="flag"/>
+
+
 <div id="side-bar">
   <ul class="items">
     <li class="item" [routerLink]="['','home']" routerLinkActive="active">Inicio</li>
@@ -12,6 +14,8 @@
     <li class="item">Tablas</li>
   </ul>
 </div>
+
+
 <div id="container">
   <router-outlet></router-outlet>
 </div>
