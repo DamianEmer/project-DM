@@ -20,6 +20,7 @@
 #flag:checked ~ #container {
   -webkit-transform: translateX(0);
   transform: translateX(0);
+  width: 100vw !important;
 }
 
 #flag:checked + #container {
@@ -33,7 +34,7 @@
   top: 130px;
   left: 0;
   bottom: 0;
-  width: 320px;
+  width: 20vw;
   height: 100%;
   background-color: #1565c0;
   transform: translateX(0);
@@ -64,10 +65,11 @@
 #container {
   position: fixed;
   top: 130px;
-  width: 100%;
+  width: 78vw;
   background-color: white;
   left: 0;
   bottom: 0;
   transform: translateX(320px);
   transition: 1s all;
+  overflow-y: scroll;
 }

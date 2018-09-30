@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
     HomeViewComponent
   ],
   imports: [
-    RouterModule.forChild([ {path: '', component: HomeViewComponent} ])
+    RouterModule.forChild([{path: '', component: HomeViewComponent}])
   ],
   exports: [
     HomeViewComponent
