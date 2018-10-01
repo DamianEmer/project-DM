@@ -1,15 +1,21 @@
 <div class="header-nav">
-    
 </div>
-<label id="mflag" for="flag"><span>menu</span></label>
+<label id="mflag" for="flag" (click)="onBarsClick()">
+  <fa-icon [icon]="bars" [spin]="spin" size="2x"></fa-icon>
+</label>
 <input type="checkbox" name="btn-flag" value="flag" id="flag"/>
+
+
 <div id="side-bar">
-    <ul class="items">
-        <a href="#"><li class="item">Inicio</li></a>
-        <a href="#"><li class="item">Temario</li></a>
-        <a href="#"><li class="item">Evaluacion</li></a>
-        <a href="#"><li class="item">Tablas</li></a>
-    </ul>   
+  <ul class="items">
+    <li class="item" [routerLink]="['','home']" routerLinkActive="active">Inicio</li>
+    <li class="item" [routerLink]="['', 'agenda']">Temario</li>
+    <li class="item">Evaluacion</li>
+    <li class="item">Tablas</li>
+  </ul>
 </div>
-<div id="container">Contenedor</div>
-<router-outlet></router-outlet> 
+
+
+<div id="container">
+  <router-outlet></router-outlet>
+</div>
