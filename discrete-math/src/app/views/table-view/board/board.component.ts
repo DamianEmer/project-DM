@@ -26,4 +26,19 @@ export class BoardComponent implements OnInit {
     console.log(this.table);
   }
 
+  /// Algortimo de conversion octal-decimal
+  cambiar(value: number ):string{
+    let decimal: string = '';
+    let num: any;
+    let dec: number;
+    for (let i=value.toString().length; i>= 0; i--){
+      num = parseInt(value.toString().charAt(i-1));
+      dec = num * Math.pow(8, i);
+      if(i==0)
+        break;
+      decimal+=dec;
+    }
+    return `decimal: ${decimal} \n binario: ${1001}`;
+  }
+
 }
