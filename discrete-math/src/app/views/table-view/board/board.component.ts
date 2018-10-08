@@ -10,8 +10,8 @@ import { NumbersService } from '../../../services/numbers.service';
 export class BoardComponent implements OnInit {
 
   table: string;
-  octal: any [];
-  dataSource;
+  octal: number [];
+  dataSource: any;
   displayedColumns: string[] = ['f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7'];
 
   constructor(private route: ActivatedRoute,
@@ -22,8 +22,24 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     this.table = this.route.snapshot.paramMap.get('title');
-    console.log(this.table);
+
+  }
+
+  // Algortimo de conversion Octal-Decimal
+  octalToDecimal( value: number): string {
+    let dec: number = 0;
+    let j:number = 0;
+    var num;
+    //console.log(`Digitos de ${value} : ${value.toString().length}`);
+    for ( let i = value.toString().length-1 ; i >= 0; i-- ){
+      num = parseInt( value.toString().charAt(i) );
+      dec += num * Math.pow(8, j);
+      //console.log(`num: ${num} - dec: ${dec} - j: ${j}`);
+      j++;     
+    }
+    return `Decimal: ${dec.toString()}`;
   }
 
 }
