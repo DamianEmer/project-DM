@@ -26,18 +26,18 @@ export class TemaryViewComponent implements OnInit {
       subtitle: 'Binario, octal, hexadecimal',
       route: 'operaciones'
     },
-    {
-      topic: 1.4,
-      title: 'Algoritmos de Booth',
-      subtitle: 'La multiplicacion binaria',
-      route: 'algoritmos-booth'
-    },
-    {
-      topic: 1.5,
-      title: 'Algoritmos de division binaria',
-      subtitle: 'division',
-      route: 'algoritmos-division'
-    }    
+    // {
+    //   topic: 1.4,
+    //   title: 'Algoritmos de Booth',
+    //   subtitle: 'La multiplicacion binaria',
+    //   route: 'algoritmos-booth'
+    // },
+    // {
+    //   topic: 1.5,
+    //   title: 'Algoritmos de division binaria',
+    //   subtitle: 'division',
+    //   route: 'algoritmos-division'
+    // }    
   ]
 
   constructor() { }
