@@ -3,9 +3,13 @@ mat-table {
   background-color: #fff;
 
     mat-header-cell, mat-cell {
-      color: black;
+      color: blue;
       justify-content: center;
       align-content: center;
-      cursor: pointer;
-    }  
+      cursor: pointer;   
+    } 
+
+    .conversion {
+      background: #262f57;
+    }
 }

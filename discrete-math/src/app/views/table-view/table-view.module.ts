@@ -6,11 +6,13 @@ import { RouterModule } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { CardComponent } from './card/card.component';
+import { ItemBoardComponent } from './item-board/item-board.component';
 
 @NgModule({
     declarations: [
         TableViewComponent,
-        CardComponent
+        CardComponent,
+        ItemBoardComponent
     ],
     imports: [
         RouterModule.forChild([ {path: '', component: TableViewComponent} ]),

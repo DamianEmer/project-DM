@@ -1,44 +1,82 @@
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">    
   <ng-container matColumnDef="f0">
     <mat-header-cell *matHeaderCellDef>|</mat-header-cell>
-    <mat-cell *matCellDef="let element" [matTooltip]="cambiar(element.f0)">{{element.f0}}</mat-cell>    
+    <mat-cell *matCellDef="let element" 
+              [matTooltip]="octalToDecimal(element.f0)"
+              matTooltipClass="conversion">{{element.f0}}</mat-cell>    
   </ng-container>
 
   <ng-container matColumnDef="f1">
     <mat-header-cell *matHeaderCellDef>|</mat-header-cell>
-    <mat-cell *matCellDef="let element" [matTooltip]="cambiar(element.f1)">{{element.f1}}</mat-cell>    
+    <mat-cell *matCellDef="let element" 
+              [matTooltip]="octalToDecimal(element.f1)"
+              matTooltipClass="conversion">{{element.f1}}</mat-cell>    
   </ng-container>
 
   <ng-container matColumnDef="f2">
     <mat-header-cell *matHeaderCellDef>|</mat-header-cell>
-    <mat-cell *matCellDef="let element" [matTooltip]="cambiar(element.f2)">{{element.f2}}</mat-cell>    
+    <mat-cell *matCellDef="let element" 
+              [matTooltip]="octalToDecimal(element.f2)"
+              matTooltipClass="conversion">{{element.f2}}</mat-cell>    
   </ng-container>
 
   <ng-container matColumnDef="f3">
     <mat-header-cell *matHeaderCellDef>|</mat-header-cell>
-    <mat-cell *matCellDef="let element" [matTooltip]="cambiar(element.f3)">{{element.f3}}</mat-cell>    
+    <mat-cell *matCellDef="let element" 
+              [matTooltip]="octalToDecimal(element.f3)"
+              matTooltipClass="conversion">{{element.f3}}</mat-cell>    
   </ng-container>
 
   <ng-container matColumnDef="f4">
     <mat-header-cell *matHeaderCellDef>|</mat-header-cell>
-    <mat-cell *matCellDef="let element" [matTooltip]="cambiar(element.f4)">{{element.f4}}</mat-cell>    
+    <mat-cell *matCellDef="let element" 
+              [matTooltip]="octalToDecimal(element.f4)"
+              matTooltipClass="conversion">{{element.f4}}</mat-cell>    
   </ng-container>
 
   <ng-container matColumnDef="f5">
     <mat-header-cell *matHeaderCellDef>|</mat-header-cell>
-    <mat-cell *matCellDef="let element" [matTooltip]="cambiar(element.f5)">{{element.f5}}</mat-cell>    
+    <mat-cell *matCellDef="let element" 
+              [matTooltip]="octalToDecimal(element.f5)"
+              matTooltipClass="conversion">{{element.f5}}</mat-cell>    
   </ng-container>
 
   <ng-container matColumnDef="f6">
     <mat-header-cell *matHeaderCellDef>|</mat-header-cell>
-    <mat-cell *matCellDef="let element" [matTooltip]="cambiar(element.f6)">{{element.f6}}</mat-cell>    
+    <mat-cell *matCellDef="let element"
+              [matTooltip]="octalToDecimal(element.f6)"
+              matTooltipClass="conversion">{{element.f6}}</mat-cell>    
   </ng-container>
 
   <ng-container matColumnDef="f7">
     <mat-header-cell *matHeaderCellDef>|</mat-header-cell>
-    <mat-cell *matCellDef="let element" [matTooltip]="cambiar(element.f7)">{{element.f7}}</mat-cell>    
+    <mat-cell *matCellDef="let element" 
+              [matTooltip]="octalToDecimal(element.f7)"
+              matTooltipClass="conversion">{{element.f7}}</mat-cell>    
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>|</th>
+      <th>|</th>
+      <th>|</th>
+      <th>|</th>
+      <th>|</th>
+      <th>|</th>
+      <th>|</th>
+      <th>|</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let row of numbers"
+        app-item-board
+        [numbers]="row">
+    <!-- <tr>
+      <td>{{row.f0}}</td>
+    </tr> 
+   </tbody> 
+</table> -->

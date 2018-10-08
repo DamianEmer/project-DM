@@ -18,7 +18,7 @@ export class NumbersService {
 
   constructor() { }
 
-  getOctals () {
+  getOctals ():any {
     return this.octals;
   }
 }
