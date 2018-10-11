@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ItemBoardComponent implements OnInit {
 
-  @Input()numbers: any;
+  @Input()row: any = {};
+  @Input()show: boolean = false;
 
   constructor() { }
 

@@ -10,20 +10,24 @@ import { NumbersService } from '../../../services/numbers.service';
 export class BoardComponent implements OnInit {
 
   table: string;
-  octal: number [];
+  hexa: boolean = false;
   dataSource: any;
-  displayedColumns: string[] = ['f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7'];
 
   constructor(private route: ActivatedRoute,
               private numberService: NumbersService) { 
-
-    this.octal = numberService.getOctals();
-    this.dataSource = this.octal;    
   }
 
   ngOnInit() {
-    
+
     this.table = this.route.snapshot.paramMap.get('title');
+
+    if(this.table === "octal"){ 
+      this.hexa = false
+      this.dataSource = this.numberService.getOctals();
+    }else{
+      this.hexa = true
+      this.dataSource = this.numberService.getHexadecimal();
+    }
 
   }
 
@@ -39,7 +43,7 @@ export class BoardComponent implements OnInit {
       //console.log(`num: ${num} - dec: ${dec} - j: ${j}`);
       j++;     
     }
-    return `Decimal: ${dec.toString()}`;
+    return `Octal: ${value} - Decimal: ${dec.toString()}`;
   }
 
 }

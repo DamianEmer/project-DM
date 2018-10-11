@@ -6,10 +6,12 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { routes } from './app.routes';
+import { ItemDirective } from './views/table-view/board/item.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ItemDirective
   ],
   imports: [
     BrowserAnimationsModule,
