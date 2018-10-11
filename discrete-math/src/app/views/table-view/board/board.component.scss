@@ -1,15 +1,19 @@
-mat-table {
+.container{
   width: 100%;
-  background-color: #fff;
+  height: 100%;
+  
+  .conversor{ 
+    color: #fff;
+  }
 
-    mat-header-cell, mat-cell {
-      color: blue;
-      justify-content: center;
-      align-content: center;
-      cursor: pointer;   
-    } 
+  .container__table{   
+    margin-top: 20px;
+    box-shadow: 15px 25px 50px rgb(185, 185, 185);
 
-    .conversion {
-      background: #262f57;
+    .table{
+      width: 90%;
+      margin: auto;
+      border-collapse: collapse;
     }
+  }
 }
