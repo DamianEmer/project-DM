@@ -1,0 +1,19 @@
+.container{
+  width: 100%;
+  height: 100%;
+  
+  .conversor{ 
+    color: #fff;
+  }
+
+  .container__table{   
+    margin-top: 20px;
+    box-shadow: 15px 25px 50px rgb(185, 185, 185);
+
+    .table{
+      width: 90%;
+      margin: auto;
+      border-collapse: collapse;
+    }
+  }
+}

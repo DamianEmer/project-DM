@@ -1,0 +1,18 @@
+<div *ngFor="let l of lesson" class="lesson">
+  <h1>{{l.title}}</h1>
+  
+  <div *ngFor="let c of l.content" class="content">
+    <br><br><br>
+    <h3>{{c.subtitle}}</h3>
+    <p>{{c.text}}</p>  
+    <div *ngFor="let i of c.images" class="image">
+      <br>
+      <img src="{{i.src}}"> 
+      <p>{{i.description}}</p> 
+    </div>
+    <div *ngIf="c.examples != null">
+      <p>{{c.examples}}</p>
+    </div> 
+  </div>
+
+</div>
