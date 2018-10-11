@@ -4,14 +4,18 @@
   <fa-icon [icon]="bars" [spin]="spin" size="2x"></fa-icon>
 </label>
 <input type="checkbox" name="btn-flag" value="flag" id="flag"/>
+
+
 <div id="side-bar">
   <ul class="items">
-    <li class="item" [routerLink]="['','home']" routerLinkActive="active">Inicio</li>
-    <li class="item" [routerLink]="['', 'agenda']">Temario</li>
+    <li class="item" [routerLink]="['', 'home']" routerLinkActive="active">Inicio</li>
+    <li class="item" [routerLink]="['', 'agenda']" routerLinkActive="active">Temario</li>
     <li class="item">Evaluacion</li>
-    <li class="item">Tablas</li>
+    <li class="item" [routerLink]="['', 'tables']" routerLinkActive="active">Tablas</li>
   </ul>
 </div>
+
+
 <div id="container">
   <router-outlet></router-outlet>
 </div>

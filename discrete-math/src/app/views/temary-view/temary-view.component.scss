@@ -1,0 +1,29 @@
+.container-temary{ 
+    margin: 25px auto;
+    width: 85%;
+    height: auto;
+
+    h1, h2{
+        text-align: center;
+        font-family: 'Merriweather', serif;
+    }
+    
+    .lessons {
+        .lesson-item {
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 30px;
+    
+            h4 {
+                margin: 8px;
+            }
+
+            &_teamary{
+                text-decoration: none;
+
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Tabla</mat-card-title>
+    <mat-card-subtitle>{{title}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{src}}" alt="{{title}}">
+  <mat-card-content>
+    <p>
+      Tabla del sistema numerico {{title}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" [routerLink]="['', 'table', title]">Abrir</button>
+  </mat-card-actions>
+</mat-card>
