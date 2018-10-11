@@ -1,11 +1,11 @@
 <div class="container-temary">
-  <h1>PRIMERA UNIDAD</h1>
-  <h2>Sistemas numéricos</h2>
+
+  <h2>SISTEMAS NÚMERICOS</h2>
 
   <div *ngFor="let topic of temary" class="lessons">
     <div class="lesson-item">
       <h3>{{topic.topic}}</h3>
-      <h5><a [routerLink]="['','lesson', topic.route]">{{topic.title}}</a></h5>
+      <h4> <a class='lesson-item_teamary' [routerLink]="['','lesson', topic.route]">{{topic.title}}</a></h4>
     </div>
   </div>
 </div>

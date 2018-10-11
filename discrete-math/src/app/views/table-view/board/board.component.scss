@@ -1,0 +1,15 @@
+mat-table {
+  width: 100%;
+  background-color: #fff;
+
+    mat-header-cell, mat-cell {
+      color: blue;
+      justify-content: center;
+      align-content: center;
+      cursor: pointer;   
+    } 
+
+    .conversion {
+      background: #262f57;
+    }
+}
