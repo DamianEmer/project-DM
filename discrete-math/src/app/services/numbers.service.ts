@@ -43,4 +43,21 @@ export class NumbersService {
   getHexadecimal(): any {
     return this.hexadecimals;
   }
+
+  // Algortimo de conversion Octal-Decimal
+  octalToDecimal( value: number): string {
+    console.log("convertir "+typeof value);
+    let dec: number = 0;
+    let j:number = 0;
+    var num;
+    //console.log(`Digitos de ${value} : ${value.toString().length}`);
+    for ( let i = value.toString().length-1 ; i >= 0; i-- ){
+      num = parseInt( value.toString().charAt(i) );
+      dec += num * Math.pow(8, j);
+      //console.log(`num: ${num} - dec: ${dec} - j: ${j}`);
+      j++;     
+    }
+    console.log(`Octal: ${value} - Decimal: ${dec.toString()}`);
+    return `Octal: ${value} - Decimal: ${dec.toString()}`;
+  }
 }

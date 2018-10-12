@@ -10,8 +10,14 @@ import { NumbersService } from '../../../services/numbers.service';
 export class BoardComponent implements OnInit {
 
   table: string;
+
   hexa: boolean = false;
+  
   dataSource: any;
+  
+  select: number;
+  
+  equivalent: number;
 
   constructor(private route: ActivatedRoute,
               private numberService: NumbersService) { 
@@ -31,19 +37,13 @@ export class BoardComponent implements OnInit {
 
   }
 
-  // Algortimo de conversion Octal-Decimal
-  octalToDecimal( value: number): string {
-    let dec: number = 0;
-    let j:number = 0;
-    var num;
-    //console.log(`Digitos de ${value} : ${value.toString().length}`);
-    for ( let i = value.toString().length-1 ; i >= 0; i-- ){
-      num = parseInt( value.toString().charAt(i) );
-      dec += num * Math.pow(8, j);
-      //console.log(`num: ${num} - dec: ${dec} - j: ${j}`);
-      j++;     
-    }
-    return `Octal: ${value} - Decimal: ${dec.toString()}`;
+  onSelect(value: number){
+    this.select = value;
+    console.log(`numero seleccionado ${this.select}`);
   }
 
+  reciveEquivalent(value: number){
+    this.equivalent = value;
+    console.log(this.equivalent);
+  }
 }

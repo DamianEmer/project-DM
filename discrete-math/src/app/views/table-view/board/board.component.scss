@@ -6,6 +6,15 @@
     color: #fff;
   }
 
+  .container__conversor {
+    background-color: #d6e9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px; 
+  }
+
   .container__table{   
     margin-top: 20px;
     box-shadow: 15px 25px 50px rgb(185, 185, 185);
