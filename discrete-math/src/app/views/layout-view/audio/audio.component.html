@@ -1,0 +1,11 @@
+<audio src="../../../../assets/audio/music.mp3"></audio>
+<div class="container">
+  <button *ngIf="!isSound" class="container__btn-play" 
+          (click)="onPlay()">
+    <fa-icon [icon]="play" size="2x"></fa-icon>
+  </button>
+  <button *ngIf="isSound"  class="container__btn-pause" 
+          (click)="onPause()">
+    <fa-icon [icon]="pause" [spin]="spin" size='2x'></fa-icon>
+  </button>
+</div>
