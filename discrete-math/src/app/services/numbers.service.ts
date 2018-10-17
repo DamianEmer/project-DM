@@ -60,4 +60,16 @@ export class NumbersService {
     console.log(`Octal: ${value} - Decimal: ${dec.toString()}`);
     return `Octal: ${value} - Decimal: ${dec.toString()}`;
   }
+
+  // Algoritmo de conversion hexadecimal a decimal
+  hexaToDecimal( value: number){
+    let dec: number = 0;
+    let j:number = 0;
+    var num;
+    for ( let i = value.toString().length-1 ; i >= 0; i-- ){
+      num = parseInt( value.toString().charAt(i) );
+      dec += num * Math.pow(16, j);
+      j++;     
+    }
+  }
 }

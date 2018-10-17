@@ -22,11 +22,18 @@ export class ItemBoardComponent implements OnInit {
   }
 
   selectNumber(value: number){
+    this.onSoundClicked('../../../../assets/audio/clicked.wav');
     this.number.emit(value);
     this.equivalent.emit(this.numberService.octalToDecimal(value));
   }
 
   sendEquivalent(value: number){
     
+  }
+
+  onSoundClicked(path: string):void {
+    let sound = new Audio();
+    sound.src = path;
+    sound.play();
   }
 }
