@@ -6,10 +6,12 @@ import { routes } from './layout-view.routes';
 import { LayoutViewComponent } from './layout-view.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AudioComponent } from './audio/audio.component';
 
 @NgModule({
   declarations: [
-    LayoutViewComponent
+    LayoutViewComponent,
+    AudioComponent
   ],
   imports: [
     CommonModule,
