@@ -1,17 +1,32 @@
-<div class="header-nav">
+<div class="header">
+  <div class="header__images">
+    <img src="../../../assets/logos/buho.png" width="185" height="140"/>
+    <!-- <img src="../../../assets/logos/logo-ito-2.png" width="165" height="150"> -->
+  </div>
+  <div class="header__controls">
+    <app-audio></app-audio>
+  </div>
+  <div class="header__logo--ito">
+    <img src="../../../assets/logos/ito.png" width="100" height="100"/>
+  </div>
 </div>
-<label id="mflag" for="flag" (click)="onBarsClick()">
+
+<label id="mflag" class="label--menu" for="check" (click)="onBarsClick()">
   <fa-icon [icon]="bars" [spin]="spin" size="2x"></fa-icon>
 </label>
-<input type="checkbox" name="btn-flag" value="flag" id="flag"/>
-<div id="side-bar">
-  <ul class="items">
-    <li class="item" [routerLink]="['','home']" routerLinkActive="active">Inicio</li>
-    <li class="item" [routerLink]="['', 'agenda']">Temario</li>
-    <li class="item">Evaluacion</li>
-    <li class="item">Tablas</li>
+<input type="checkbox" class="input--menu" name="btn-flag" value="flag" id="check"/>
+
+
+<div class="sidebar">
+  <ul class="sidebar__items">
+    <li class="items__item" [routerLink]="['', 'home']" routerLinkActive="active">Inicio</li>
+    <li class="items__item" [routerLink]="['', 'agenda']" routerLinkActive="active">Temario</li>
+    <li class="items__item">Evaluacion</li>
+    <li class="items__item" [routerLink]="['', 'tables']" routerLinkActive="active">Tablas</li>
   </ul>
 </div>
-<div id="container">
+
+
+<div class="container">
   <router-outlet></router-outlet>
 </div>
