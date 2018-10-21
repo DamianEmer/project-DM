@@ -3,6 +3,9 @@
     <img src="../../../assets/logos/buho.png" width="200" height="150">
     <!-- <img src="../../../assets/logos/logo-ito-2.png" width="165" height="150"> -->
   </div>
+  <div class="header-controls">
+    <app-audio></app-audio>
+  </div>
 </div>
 
 <label id="mflag" class="label--menu" for="check" (click)="onBarsClick()">
@@ -16,7 +19,7 @@
     <li class="items__item" [routerLink]="['', 'home']" routerLinkActive="active">Inicio</li>
     <li class="items__item" [routerLink]="['', 'agenda']" routerLinkActive="active">Temario</li>
     <li class="items__item">Evaluacion</li>
-    <li class="items__item" (click)="onSelectView()" [routerLink]="['', 'tables']" routerLinkActive="active">Tablas</li>
+    <li class="items__item" [routerLink]="['', 'tables']" routerLinkActive="active">Tablas</li>
   </ul>
 </div>
 
