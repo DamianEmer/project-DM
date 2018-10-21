@@ -1,16 +1,13 @@
-.header-nav {
+// HEADER
+.header {
   width: 100%;
   height: 140px;
   background-color: #1976d2;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 
-  .header-logos {
+  .header__images {
     width: 600px;
-    height: 180px;
-    //background-color: #fff;
-    //margin: auto;
-    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,58 +24,51 @@
   }
 }
 
-#flag {
+// CONTROLES DE MENU
+.input--menu {
   display: none;
 }
 
-#mflag {
+.label--menu {
   position: absolute;
   margin-top: -60px;
   margin-left: 25px;
   color: #fff;
-  font-size: 18px;
 }
 
-#flag:checked + #side-bar,
-#flag:checked ~ #container {
+// EFECTOS DE TRANSICION 
+.input--menu:checked + .sidebar,
+.input--menu:checked ~ .container {
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  width: 98% !important;
+  width: 100vw !important;
 }
 
-#flag:checked + #container {
-  -webkit-transform: translateX(320px);
-  transform: translateX(320px);
-  transition: 1s all;
-  
-}
-
-#side-bar {
+// SIDEBAR (MENU LATERAL)
+.sidebar {
   position: fixed;
-  top: 140px;
-  left: 0;
-  bottom: 0;
   width: 20vw;
   height: 100%;
   background-color: #1976d2;
   transform: translateX(0);
-  transition: 1s all;
+  transition: .8s all;
 
-  .items {
+  .sidebar__items {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
 
-    .item {
+    .items__item {
       width: 100%;
       height: 0;
-      font-size: 1.5em;
+      font-size: 1.1em;
+      font-family: 'Montserrat', sans-serif;
       color: #fff;
       text-align: center;
       padding: 50px 0;
       list-style: none;
       &:active, &.active {
-        background-color: #1976d2;
+        background-color: #12589e;
       }
       &:hover, &.hover {
         background-color: #004ba0;
@@ -88,16 +78,38 @@
   }
 }
 
-#container {
+// CONTENEDOR DE VISTAS
+.container {
   position: fixed;
   top: 140px;
   height: auto;
   width: 80vw;
-  padding: 15px 15px;
-  background-color: white;
+  padding: 25px;
+  background-color: #ffffff;
   left: 0;
   bottom: 0;
-  transform: translateX(320px);
-  transition: 1s all;
+  transform: translateX(20vw);
+  transition: .8s all;
   overflow-y: scroll;
+}
+
+@media screen and (max-width: 620px){
+
+  .header__images{
+    img{
+      width: 130px;
+      height: 110px;
+    }
+  }
+
+  .input--menu:checked ~ .container {
+    -webkit-transform: translateY(100vh);
+    transform: translatey(100vh);
+    width: 0vw !important;
+  }
+
+  .container{
+    transform: translateY(0);
+    width: 100vw;
+  }
 }
