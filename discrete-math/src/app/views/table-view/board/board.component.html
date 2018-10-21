@@ -25,10 +25,10 @@
           <th *ngIf="hexa">|</th>
         </tr>
       </thead>
-      <tbody  *ngFor="let r of dataSource" 
-              app-item-board [row]="r" 
-              [show]="hexa" 
-              class="table__body" 
+      <tbody  *ngFor="let r of dataSource"
+              app-item-board [row]="r"
+              [show]="hexa"
+              class="table__body"
               (number)="onSelect($event)"
               (equivalent)="reciveEquivalent($event)">
       </tbody>
