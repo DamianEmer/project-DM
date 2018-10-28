@@ -8,6 +8,7 @@ export const routes: Routes = [
       {path: 'home', loadChildren: '../home-view/home-view.module#HomeViewModule'},
       {path: 'agenda', loadChildren: '../temary-view/temary-view.module#TemaryViewModule'},
       {path: 'lesson/:id', loadChildren: '../temary-view/lesson/lesson.module#LessonModule'},
+      {path: 'evaluacion', loadChildren: '../evaluation-view/evaluation-view.module#EvaluationViewModule'},
       {path: 'tables', loadChildren: '../table-view/table-view.module#TableViewModule'},
       {path: 'table/:title', loadChildren: '../table-view/board/board.module#BoardModule'},
       {path: '', pathMatch: 'full', redirectTo: 'home'},
