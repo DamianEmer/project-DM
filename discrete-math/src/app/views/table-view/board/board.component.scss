@@ -1,4 +1,5 @@
 .container{
+  //background-color: #d6e9fc;
   width: 100%;
   height: 100%;
   
@@ -7,20 +8,24 @@
   }
 
   .container__conversor {
-    background-color: #d6e9fc;
+    background-color: #b4d8fc;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 70px; 
+    margin: 15px auto;
   }
 
   .container__table{   
-    margin-top: 20px;
+    //background-color: #4c5d6e;
+    width: 95%;
+    margin: 20px auto; 
+    padding: 15px;
     box-shadow: 15px 25px 50px rgb(185, 185, 185);
 
     .table{
-      width: 90%;
+      width: 95%;
       margin: auto;
       border-collapse: collapse;
     }
