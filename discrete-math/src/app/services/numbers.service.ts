@@ -58,18 +58,36 @@ export class NumbersService {
       j++;     
     }
     console.log(`Octal: ${value} - Decimal: ${dec.toString()}`);
-    return `Octal: ${value} - Decimal: ${dec.toString()}`;
+    //return `Octal: ${value} - Decimal: ${dec.toString()}`;
+    return dec.toString();
   }
 
   // Algoritmo de conversion hexadecimal a decimal
   hexaToDecimal( value: number){
-    let dec: number = 0;
-    let j:number = 0;
-    var num;
+    let dec: number = 0;//Almacena el resultado final ()
+    let j:number = 0;//Contador para el exponente a elevar la base
+    var num;//Numero de la posicion del que se convertira
     for ( let i = value.toString().length-1 ; i >= 0; i-- ){
       num = parseInt( value.toString().charAt(i) );
       dec += num * Math.pow(16, j);
       j++;     
     }
+  }
+
+  numberToLetter(letter: string):number {
+    switch(letter){
+      case 'A':
+        return 10;
+      case 'B':
+        return 11;
+      case 'C':
+        return 12;
+      case 'D':
+        return 13;
+      case 'E':
+        return 14;
+      case 'F':
+        return 15;
+    }       
   }
 }

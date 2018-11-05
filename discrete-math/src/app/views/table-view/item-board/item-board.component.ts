@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NumbersService } from '../../../services/numbers.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConverterModalComponent } from 'src/app/components/converter-modal/converter-modal.component';
+import { DataSharedService } from 'src/app/services/data-shared.service';
 
 @Component({
   selector: '[app-item-board]',
@@ -16,7 +19,9 @@ export class ItemBoardComponent implements OnInit {
   
   @Output()equivalent = new EventEmitter;
 
-  constructor(private numberService: NumbersService) { }
+  constructor(private numberService: NumbersService,
+              private dialog: MatDialog,
+              private dataSharedService: DataSharedService) { }
 
   ngOnInit() {
   }
@@ -35,5 +40,14 @@ export class ItemBoardComponent implements OnInit {
     let sound = new Audio();
     sound.src = path;
     sound.play();
+  }
+
+  openDialogConverter(value: number):void {
+    this.dataSharedService.setDataShared(value);
+    const dialogRef = this.dialog.open(ConverterModalComponent, 
+      {
+        width: '800px', 
+        height: '400px'
+      });
   }
 }
