@@ -6,16 +6,25 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataSharedService {
 
-  _somedata: any;
+  _someNumber: any;
+  _tab: any;
 
-  public _dataShared = new BehaviorSubject<any>([]);
-  dataShared$ = this._dataShared.asObservable();
+  public dataNumberShared = new BehaviorSubject<any>([]);
+  dataNumberShared$ = this.dataNumberShared.asObservable();
+
+  public dataTabsShared = new BehaviorSubject<any>([]);
+  dataTabsShared$ = this.dataTabsShared.asObservable();
 
   constructor() { }
 
   // Metodo encargado de compartir informacion
-  public setDataShared(somedata: any){
-    this._somedata = somedata;
-    this._dataShared.next(somedata);
+  public setDataShared(someNumber: any){
+    this._someNumber = someNumber;
+    this.dataNumberShared.next(someNumber);
+  }
+
+  public setDataTabsShared(tab: any){
+    this._tab = tab;
+    this.dataTabsShared.next(tab);
   }
 }

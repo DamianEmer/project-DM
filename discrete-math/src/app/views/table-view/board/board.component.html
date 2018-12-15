@@ -2,7 +2,6 @@
   <div class="container__conversor">
     <h1>{{name}}</h1>
     <button class="btn--info" mat-stroked-button (click)="openDialog()">Conocer más...</button>
-    <!-- <app-converter [num]="select" [numEquiv]="equivalent"></app-converter> -->
   </div>
   <br>
   <div class="container__table">
@@ -29,10 +28,9 @@
       </thead>
       <tbody  *ngFor="let r of dataSource"
               app-item-board [row]="r"
-              [show]="hexa"
-              class="table__body"
-              (number)="onSelect($event)"
-              (equivalent)="reciveEquivalent($event)">
+              [show]="isHexa"
+              [name]="name"
+              class="table__body">
       </tbody>
     </table>
   </div>

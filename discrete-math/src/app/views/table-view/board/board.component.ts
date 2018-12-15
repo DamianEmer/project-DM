@@ -16,13 +16,9 @@ export class BoardComponent implements OnInit {
 
   name: string;
 
-  hexa: boolean = false;
+  isHexa: boolean = false;
   
   dataSource: any;
-  
-  select: number;
-  
-  equivalent: number;
 
   showInfo: boolean;
 
@@ -37,23 +33,13 @@ export class BoardComponent implements OnInit {
     this.name = this.route.snapshot.paramMap.get('title');
 
     if(this.name === "octal"){ 
-      this.hexa = false
+      this.isHexa = false
       this.dataSource = this.numberService.getOctals();
     }else{
-      this.hexa = true
+      this.isHexa = true
       this.dataSource = this.numberService.getHexadecimal();
     }
 
-  }
-
-  onSelect(value: number){
-    this.select = value;
-    console.log(`numero seleccionado ${this.select}`);
-  }
-
-  reciveEquivalent(value: number){
-    this.equivalent = value;
-    console.log(this.equivalent);
   }
 
   openDialog(): void {
