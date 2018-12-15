@@ -4,16 +4,22 @@
   height: 140px;
   background-color: #1976d2;
   display: flex;
-  justify-content: center;
 
   .header__images {
     width: 600px;
     display: flex;
+    margin: auto;
     justify-content: center;
     align-items: center;
   }
 
-  .header-controls {
+  .header__logo--ito{
+    width: 100px;
+    height: 100px;
+    margin: 15px 15px 0 0;
+  }
+
+  .header__controls {
     position: absolute;
     background-color: #408dda;
     width: 150px;
@@ -84,7 +90,7 @@
   top: 140px;
   height: auto;
   width: 80vw;
-  padding: 25px;
+  //padding: 25px;
   background-color: #ffffff;
   left: 0;
   bottom: 0;
@@ -95,13 +101,29 @@
 
 @media screen and (max-width: 620px){
 
-  .header__images{
-    img{
-      width: 130px;
-      height: 110px;
+  .header{
+    .header__images{
+      img{
+        width: 130px;
+        height: 110px;
+      }
+    }
+    .header__logo--ito{
+      position: absolute;
+      margin: 15px 0 0 80%;
+      width: 80px;
+      height: 80px;
+      img{
+        width: inherit;
+        height: inherit;
+      }
+    }
+
+    .header__controls{
+      width: 95px;
     }
   }
-
+  
   .input--menu:checked ~ .container {
     -webkit-transform: translateY(100vh);
     transform: translatey(100vh);
