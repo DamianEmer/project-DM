@@ -1,0 +1,23 @@
+<div class="container" *ngIf="finish == true">
+  <div class="container__question">
+    <h4>{{question.question}}</h4>
+    <div class="question--image" *ngIf="question.image != null">
+      <img src="{{question.image}}"/>
+    </div>
+    <div class="question__answers" *ngFor="let a of question.answers">
+      <div class="answers-answer">
+        <form [formGroup]="form" (ngSubmit)="nextQuestion()">
+          <input type="checkbox" id="answer" value="{{a.answer}}"/>
+          <label>{{a.letter}} - {{a.answer}}</label>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="question__actions">
+    <button class="btn btn--cancel">Cancelar</button>
+    <button class="btn btn--next" (click)="nextQuestion(1)">Siguiente</button>
+  </div>  
+</div>
+<div class="container" *ngIf="finish == false">
+  <h1>Termino la evaluacion...</h1>
+</div>
