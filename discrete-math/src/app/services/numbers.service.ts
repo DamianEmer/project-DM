@@ -46,30 +46,121 @@ export class NumbersService {
 
   // Algortimo de conversion Octal-Decimal
   octalToDecimal( value: number): string {
-    console.log("convertir "+typeof value);
+    //console.log("convertir "+typeof value);
     let dec: number = 0;
     let j:number = 0;
     var num;
-    //console.log(`Digitos de ${value} : ${value.toString().length}`);
     for ( let i = value.toString().length-1 ; i >= 0; i-- ){
-      num = parseInt( value.toString().charAt(i) );
+      num = parseInt( value.toString().charAt(i));
       dec += num * Math.pow(8, j);
-      //console.log(`num: ${num} - dec: ${dec} - j: ${j}`);
-      j++;     
+      j++;
     }
-    console.log(`Octal: ${value} - Decimal: ${dec.toString()}`);
-    return `Octal: ${value} - Decimal: ${dec.toString()}`;
+    //console.log(`Octal: ${value} - Decimal: ${dec.toString()}`);
+    return dec.toString();
   }
 
   // Algoritmo de conversion hexadecimal a decimal
-  hexaToDecimal( value: number){
+  hexaToDecimal( value: any): string {
     let dec: number = 0;
     let j:number = 0;
     var num;
+    let caracter: string;
     for ( let i = value.toString().length-1 ; i >= 0; i-- ){
-      num = parseInt( value.toString().charAt(i) );
-      dec += num * Math.pow(16, j);
-      j++;     
+      caracter = value.toString().charAt(i);
+      if(this.isLetter(caracter))  {
+        num = this.letterToNumber(caracter);
+        dec += num * Math.pow(16, j);
+        j++;       
+      }else{
+        num = parseInt( value.toString().charAt(i));
+        dec += num * Math.pow(16, j);
+        j++;
+      }     
     }
+    return dec.toString();
   }
+
+  // NO FUNCIONA - IDEA: sera un un punete de conversion
+  octalToBinary( value: any ):string {
+    return this.decimalToBinary(this.octalToDecimal(value));
+  }
+
+  hexaToBinary():void {
+
+  }
+
+  octalToHexa():void {
+
+  }
+
+  hexaToOctal():void {
+
+  }
+
+
+  // AUN NO FUNCIONA CORRECTAMENTE -> Sino cambiar la logica por completo
+  decimalToBinary ( value: any ): string {
+		let listResidues: number [] = []; 
+		let isFirstTime: boolean = true;
+    let binary: string;
+    let quotient: number;
+    let residue: number;
+    let limit:number = 0
+		do {
+			if(isFirstTime) {
+				quotient = this.getValue(value, 2, true);//numberDecimal / BINARY;
+				residue = this.getValue(value, 2, false);//numberDecimal % BINARY;
+				isFirstTime = false;
+			}else {
+				residue = this.getValue(quotient, 2, false);//quotient % BINARY;
+				quotient = this.getValue(quotient, 2, true);//quotient / BINARY;
+      }
+      listResidues.push(Math.round(residue));
+      limit++;
+		}while(quotient > 0 || limit == 3);
+		let size = listResidues.length-1;			
+		for(let i = size; i >= 0; i--)
+      binary+= listResidues[i].toString();
+    //console.log(binary);
+		return binary;
+  }
+  
+  getValue(divider: number, divident: number, type: boolean): number {
+		return (type)? divider/divident : divider%divident; 
+	}
+  
+  letterToNumber(letter: string):number {
+    let value;
+    switch(letter){
+      case 'A':
+        value = 10;
+        break;
+      case 'B':
+        value = 11;
+        break;
+      case 'C':
+        value = 12;
+        break;
+      case 'D':
+        value = 13;
+        break;
+      case 'E':
+        value = 14;
+        break;
+      case 'F':
+        value = 15;
+        break;
+    }
+    return value;       
+  }
+
+  isLetter(caracter: string):boolean{
+    return     caracter == 'A' 
+            || caracter == 'B'
+            || caracter == 'C' 
+            || caracter == 'D' 
+            || caracter == 'E'
+            || caracter == 'F';
+  }
+
 }
