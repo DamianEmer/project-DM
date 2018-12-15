@@ -4,6 +4,8 @@
   height: 140px;
   background-color: #1976d2;
   display: flex;
+  box-shadow: 15px 15px 20px rgb(68, 68, 68);
+  z-index: 1;
 
   .header__images {
     width: 600px;
