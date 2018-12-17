@@ -28,25 +28,23 @@ export class ConverterModalComponent implements OnInit {
 
   name: string;
 
-  @Output()tab = new EventEmitter;
-
   constructor(private dataSharedService: DataSharedService,
-              public dialogRef: MatDialogRef<ConverterModalComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: DialogData) { 
-                this.name = data.name;
-    this.asyncTabs = Observable.create( ( observer: Observer<ExampleTab[ ]> ) => {
+    public dialogRef: MatDialogRef<ConverterModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    this.name = data.name;
+    this.asyncTabs = Observable.create((observer: Observer<ExampleTab[]>) => {
       setTimeout(() => {
-        if(this.name == 'octal')
+        if (this.name == 'octal')
           observer.next([
-            {label: Systems.DEC},
-            {label: Systems.HEX},
-            {label: Systems.BIN},
+            { label: Systems.DEC },
+            { label: Systems.HEX },
+            { label: Systems.BIN },
           ]);
         else
           observer.next([
-            {label: Systems.DEC},
-            {label: Systems.OCT},
-            {label: Systems.BIN},
+            { label: Systems.DEC },
+            { label: Systems.OCT },
+            { label: Systems.BIN },
           ]);
       }, 1000);
     });

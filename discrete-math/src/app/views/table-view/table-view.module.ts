@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { TableViewComponent } from './table-view.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { CardTableModule } from '../../components/card-table/card-table.module'; 
+import { CardTableModule } from '../../components/card-table/card-table.module';
 
 @NgModule({
     declarations: [
