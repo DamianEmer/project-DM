@@ -8,11 +8,13 @@ import { CommonModule } from '@angular/common';
 import { ItemBoardComponent } from '../item-board/item-board.component';
 import { ConverterModalModule } from 'src/app/components/converter-modal/converter-modal.module';
 import { InfoTableModalModule } from 'src/app/components/info-table-modal/info-table-modal.module';
+import { StepsPipe } from '../../../pipes/steps.pipe';
 
 @NgModule({
     declarations:[
         BoardComponent,
-        ItemBoardComponent
+        ItemBoardComponent,
+        StepsPipe
     ],
     imports: [
         RouterModule.forChild([ {path: '', component: BoardComponent} ]),

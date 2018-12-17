@@ -34,6 +34,117 @@ export class NumbersService {
     { f0: 'E0', f1: 'E1', f2: 'E2', f3: 'E3', f4: 'E4', f5: 'E5', f6: 'E6', f7: 'E7', f8: 'E8', f9: 'E9', f10:'EA', f11:'EB', f12:'EC', f13:'ED', f14:'EE', f15:'EF' },
   ]
 
+  steps: any [] = [
+    {
+      number: 10,
+      from: 'octal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/octal/oct-dec-01.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/octal/oct-hex-01.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/octal/oct-bin-01.JPG'
+        }
+      ]
+    },
+    {
+      number: 21,
+      from: 'octal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/octal/oct-dec-02.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/octal/oct-hex-02.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/octal/oct-bin-02.JPG'
+        }
+      ]
+    },
+    {
+      number: 54,
+      from: 'octal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/octal/oct-dec-03.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/octal/oct-hex-03.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/octal/oct-bin-03.JPG'
+        }
+      ]
+    },
+    {
+      number: 'B',
+      from: 'hexadecimal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/hexa/hex-dec-01.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/hexa/hex-oct-01.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/hexa/hex-bin-01.JPG'
+        }
+      ]
+    },
+    {
+      number: 63,
+      from: 'hexadecimal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/hexa/hex-dec-02.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/hexa/hex-oct-02.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/hexa/hex-bin-02.JPG'
+        }
+      ]
+    },
+    {
+      number: 'AB',
+      from: 'hexadecimal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/hexa/hex-dec-03.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/hexa/hex-oct-03.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/hexa/hex-bin-03.JPG'
+        }
+      ]
+    },
+  ]
+
   constructor() { }
 
   getOctals ():any {
@@ -44,123 +155,37 @@ export class NumbersService {
     return this.hexadecimals;
   }
 
-  // Algortimo de conversion Octal-Decimal
-  octalToDecimal( value: number): string {
-    //console.log("convertir "+typeof value);
-    let dec: number = 0;
-    let j:number = 0;
-    var num;
-    for ( let i = value.toString().length-1 ; i >= 0; i-- ){
-      num = parseInt( value.toString().charAt(i));
-      dec += num * Math.pow(8, j);
-      j++;
-    }
-    //console.log(`Octal: ${value} - Decimal: ${dec.toString()}`);
-    return dec.toString();
+  getSteps():any {
+    return this.steps;
   }
 
-  // Algoritmo de conversion hexadecimal a decimal
-  hexaToDecimal( value: any): string {
-    let dec: number = 0;
-    let j:number = 0;
-    var num;
-    let caracter: string;
-    for ( let i = value.toString().length-1 ; i >= 0; i-- ){
-      caracter = value.toString().charAt(i);
-      if(this.isLetter(caracter))  {
-        num = this.letterToNumber(caracter);
-        dec += num * Math.pow(16, j);
-        j++;       
-      }else{
-        num = parseInt( value.toString().charAt(i));
-        dec += num * Math.pow(16, j);
-        j++;
-      }     
-    }
-    return dec.toString();
+  convertToBinay(value: any): string {
+    let number = parseInt(value);
+    return number.toString(2);
   }
 
-  // NO FUNCIONA - IDEA: sera un un punete de conversion
-  octalToBinary( value: any ):string {
-    return this.decimalToBinary(this.octalToDecimal(value));
+  convertToOctal(value: any): string {
+    let number = parseInt(value);
+    return number.toString(8);
   }
 
-  hexaToBinary():void {
-
+  convertToHexa(value: any):string {
+    let number = parseInt(value);
+    return number.toString(16);
   }
 
-  octalToHexa():void {
-
+  fromBinary(value: any):string{
+    let number = parseInt(value, 2);
+    return number.toString();    
   }
 
-  hexaToOctal():void {
-
+  fromOctal(value: any):string{
+    let number = parseInt(value, 8);
+    return number.toString();    
   }
 
-
-  // AUN NO FUNCIONA CORRECTAMENTE -> Sino cambiar la logica por completo
-  decimalToBinary ( value: any ): string {
-		let listResidues: number [] = []; 
-		let isFirstTime: boolean = true;
-    let binary: string;
-    let quotient: number;
-    let residue: number;
-    let limit:number = 0
-		do {
-			if(isFirstTime) {
-				quotient = this.getValue(value, 2, true);//numberDecimal / BINARY;
-				residue = this.getValue(value, 2, false);//numberDecimal % BINARY;
-				isFirstTime = false;
-			}else {
-				residue = this.getValue(quotient, 2, false);//quotient % BINARY;
-				quotient = this.getValue(quotient, 2, true);//quotient / BINARY;
-      }
-      listResidues.push(Math.round(residue));
-      limit++;
-		}while(quotient > 0 || limit == 3);
-		let size = listResidues.length-1;			
-		for(let i = size; i >= 0; i--)
-      binary+= listResidues[i].toString();
-    //console.log(binary);
-		return binary;
+  fromHexa(value: any):string{
+    let number = parseInt(value, 16);
+    return number.toString();    
   }
-  
-  getValue(divider: number, divident: number, type: boolean): number {
-		return (type)? divider/divident : divider%divident; 
-	}
-  
-  letterToNumber(letter: string):number {
-    let value;
-    switch(letter){
-      case 'A':
-        value = 10;
-        break;
-      case 'B':
-        value = 11;
-        break;
-      case 'C':
-        value = 12;
-        break;
-      case 'D':
-        value = 13;
-        break;
-      case 'E':
-        value = 14;
-        break;
-      case 'F':
-        value = 15;
-        break;
-    }
-    return value;       
-  }
-
-  isLetter(caracter: string):boolean{
-    return     caracter == 'A' 
-            || caracter == 'B'
-            || caracter == 'C' 
-            || caracter == 'D' 
-            || caracter == 'E'
-            || caracter == 'F';
-  }
-
 }
