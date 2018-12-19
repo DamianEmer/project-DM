@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,10 @@ export class DataSharedService {
   public dataTabsShared = new BehaviorSubject<any>([]);
   dataTabsShared$ = this.dataTabsShared.asObservable();
 
+  private currentNumber = new Subject<number>();
+
+  currentNumber$ = this.currentNumber.asObservable();
+
   constructor() { }
 
   // Metodo encargado de compartir informacion
@@ -26,5 +30,9 @@ export class DataSharedService {
   public setDataTabsShared(tab: any){
     this.tab = tab;
     this.dataTabsShared.next(tab);
+  }
+
+  public setCurrentNumber(n: number) {
+    this.currentNumber.next(n);
   }
 }

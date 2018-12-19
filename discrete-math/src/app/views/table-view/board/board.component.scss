@@ -21,6 +21,19 @@
     .btn--info{
       left: 20%;
     }
+
+    span {
+      width: 130px;
+      height: 35px;
+      margin-left: 20px; 
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      border: 1px solid #ddd;
+      //background-color: rgb(163, 122, 122);
+    }
   }
 
   .container__table{   

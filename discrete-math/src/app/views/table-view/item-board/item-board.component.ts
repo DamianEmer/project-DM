@@ -40,4 +40,8 @@ export class ItemBoardComponent implements OnInit {
         }
       });
   }
+
+  onHover(n: number) {
+    this.dataSharedService.setCurrentNumber(n);
+  }
 }

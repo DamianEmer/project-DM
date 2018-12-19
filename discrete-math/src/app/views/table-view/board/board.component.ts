@@ -4,6 +4,7 @@ import { NumbersService } from '../../../services/numbers.service';
 import { ThemePalette } from '@angular/material/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { InfoTableModalComponent } from 'src/app/components/info-table-modal/info-table-modal.component';
+import { DataSharedService } from 'src/app/services/data-shared.service';
 
 @Component({
   selector: 'app-board',
@@ -22,9 +23,12 @@ export class BoardComponent implements OnInit {
 
   showInfo: boolean;
 
+  currentNumber: number;
+
   constructor(private route: ActivatedRoute,
               public dialog: MatDialog,
-              private numberService: NumbersService) { 
+              private numberService: NumbersService,
+              private sharedService: DataSharedService) { 
                 this.showInfo = false;
   }
 
@@ -40,6 +44,7 @@ export class BoardComponent implements OnInit {
       this.dataSource = this.numberService.getHexadecimal();
     }
 
+    this.sharedService.currentNumber$.subscribe(value => this.currentNumber = value);
   }
 
   openDialog(): void {
@@ -52,5 +57,9 @@ export class BoardComponent implements OnInit {
     dialogConfig.data = { name: this.name };
 
     const dialogRef = this.dialog.open(InfoTableModalComponent, dialogConfig);
+  }
+
+  parseInt(n: any, base: number) {
+    return parseInt(n, base);
   }
 }
