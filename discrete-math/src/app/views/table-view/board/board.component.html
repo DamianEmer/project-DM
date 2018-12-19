@@ -1,6 +1,7 @@
 <div class="container">
   <div class="container__conversor">
     <h1>{{name}}</h1>
+    <span>{{isHexa ? 'Hexadecimal' : 'Octal'}} {{currentNumber}} = Decimal {{parseInt(currentNumber, isHexa ? 16 : 8)}}</span>
     <button class="btn--info" mat-stroked-button (click)="openDialog()">Conocer más...</button>
   </div>
   <br>
@@ -16,14 +17,14 @@
           <th>|</th>
           <th>|</th>
           <th>|</th>
-          <th *ngIf="hexa">|</th>
-          <th *ngIf="hexa">|</th>
-          <th *ngIf="hexa">|</th>
-          <th *ngIf="hexa">|</th>
-          <th *ngIf="hexa">|</th>
-          <th *ngIf="hexa">|</th>
-          <th *ngIf="hexa">|</th>
-          <th *ngIf="hexa">|</th>
+          <th *ngIf="isHexa">|</th>
+          <th *ngIf="isHexa">|</th>
+          <th *ngIf="isHexa">|</th>
+          <th *ngIf="isHexa">|</th>
+          <th *ngIf="isHexa">|</th>
+          <th *ngIf="isHexa">|</th>
+          <th *ngIf="isHexa">|</th>
+          <th *ngIf="isHexa">|</th>
         </tr>
       </thead>
       <tbody  *ngFor="let r of dataSource"
