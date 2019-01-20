@@ -34,6 +34,117 @@ export class NumbersService {
     { f0: 'E0', f1: 'E1', f2: 'E2', f3: 'E3', f4: 'E4', f5: 'E5', f6: 'E6', f7: 'E7', f8: 'E8', f9: 'E9', f10:'EA', f11:'EB', f12:'EC', f13:'ED', f14:'EE', f15:'EF' },
   ]
 
+  steps: any [] = [
+    {
+      number: 10,
+      from: 'octal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/octal/oct-dec-01.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/octal/oct-hex-01.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/octal/oct-bin-01.JPG'
+        }
+      ]
+    },
+    {
+      number: 21,
+      from: 'octal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/octal/oct-dec-02.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/octal/oct-hex-02.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/octal/oct-bin-02.JPG'
+        }
+      ]
+    },
+    {
+      number: 54,
+      from: 'octal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/octal/oct-dec-03.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/octal/oct-hex-03.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/octal/oct-bin-03.JPG'
+        }
+      ]
+    },
+    {
+      number: 'B',
+      from: 'hexadecimal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/hexa/hex-dec-01.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/hexa/hex-oct-01.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/hexa/hex-bin-01.JPG'
+        }
+      ]
+    },
+    {
+      number: 63,
+      from: 'hexadecimal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/hexa/hex-dec-02.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/hexa/hex-oct-02.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/hexa/hex-bin-02.JPG'
+        }
+      ]
+    },
+    {
+      number: 'AB',
+      from: 'hexadecimal',
+      type: [
+        {
+          type: 0,
+          src: '../../assets/steps/hexa/hex-dec-03.JPG'
+        },
+        {
+          type: 1,
+          src: '../../assets/steps/hexa/hex-oct-03.JPG'
+        },
+        {
+          type: 2,
+          src: '../../assets/steps/hexa/hex-bin-03.JPG'
+        }
+      ]
+    },
+  ]
+
   constructor() { }
 
   getOctals ():any {
@@ -44,32 +155,37 @@ export class NumbersService {
     return this.hexadecimals;
   }
 
-  // Algortimo de conversion Octal-Decimal
-  octalToDecimal( value: number): string {
-    console.log("convertir "+typeof value);
-    let dec: number = 0;
-    let j:number = 0;
-    var num;
-    //console.log(`Digitos de ${value} : ${value.toString().length}`);
-    for ( let i = value.toString().length-1 ; i >= 0; i-- ){
-      num = parseInt( value.toString().charAt(i) );
-      dec += num * Math.pow(8, j);
-      //console.log(`num: ${num} - dec: ${dec} - j: ${j}`);
-      j++;     
-    }
-    console.log(`Octal: ${value} - Decimal: ${dec.toString()}`);
-    return `Octal: ${value} - Decimal: ${dec.toString()}`;
+  getSteps():any {
+    return this.steps;
   }
 
-  // Algoritmo de conversion hexadecimal a decimal
-  hexaToDecimal( value: number){
-    let dec: number = 0;
-    let j:number = 0;
-    var num;
-    for ( let i = value.toString().length-1 ; i >= 0; i-- ){
-      num = parseInt( value.toString().charAt(i) );
-      dec += num * Math.pow(16, j);
-      j++;     
-    }
+  convertToBinay(value: any): string {
+    let number = parseInt(value);
+    return number.toString(2);
+  }
+
+  convertToOctal(value: any): string {
+    let number = parseInt(value);
+    return number.toString(8);
+  }
+
+  convertToHexa(value: any):string {
+    let number = parseInt(value);
+    return number.toString(16);
+  }
+
+  fromBinary(value: any):string{
+    let number = parseInt(value, 2);
+    return number.toString();    
+  }
+
+  fromOctal(value: any):string{
+    let number = parseInt(value, 8);
+    return number.toString();    
+  }
+
+  fromHexa(value: any):string{
+    let number = parseInt(value, 16);
+    return number.toString();    
   }
 }

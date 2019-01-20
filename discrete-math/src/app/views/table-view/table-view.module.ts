@@ -2,21 +2,16 @@ import { NgModule } from '@angular/core';
 import { TableViewComponent } from './table-view.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-import { MatCardModule} from '@angular/material/card';
-import { MatButtonModule} from '@angular/material/button';
-import { CardComponent } from './card/card.component';
+import { CardTableModule } from '../../components/card-table/card-table.module';
 
 @NgModule({
     declarations: [
-        TableViewComponent,
-        CardComponent
+        TableViewComponent
     ],
     imports: [
         RouterModule.forChild([ {path: '', component: TableViewComponent} ]),
         CommonModule,
-        MatCardModule,
-        MatButtonModule
+        CardTableModule
     ],
     exports: [
         TableViewComponent

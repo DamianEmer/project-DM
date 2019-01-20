@@ -8,13 +8,32 @@
   }
 
   .container__conversor {
-    background-color: #b4d8fc;
+    background-color: #f3f3f3;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
+    padding: 2px 15px;
     height: 70px; 
     margin: 15px auto;
+    text-transform: uppercase;
+
+    .btn--info{
+      left: 20%;
+    }
+
+    span {
+      width: 130px;
+      height: 35px;
+      margin-left: 20px; 
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      border: 1px solid #ddd;
+      //background-color: rgb(163, 122, 122);
+    }
   }
 
   .container__table{   
@@ -29,5 +48,14 @@
       margin: auto;
       border-collapse: collapse;
     }
+  }
+
+  .info-container{
+    position: relative;
+    margin: -30% auto; 
+    width: 85%;
+    height: 350px;
+    background-color: #fff;
+    box-shadow: 0px 20px 25px rgb(172, 172, 172);
   }
 }

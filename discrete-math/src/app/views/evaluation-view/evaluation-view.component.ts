@@ -20,6 +20,8 @@ export class EvaluationViewComponent implements OnInit {
 
   form: FormGroup;
 
+  selects: any[];
+
   constructor(private evalService: EvaluationService,
               private fb: FormBuilder) {
     this.next = 1;
