@@ -10,7 +10,6 @@ export class EvaluationService {
         id: 1,
         question: ' De qué sistema de numeración es la sig. definición. El sistema decimal es el sistema de numeración posicional con base b=10, con 10 dígitos de notados por los símbolos: 0, 1, 2, 3, 4, 5, 6, 7, 8,9 ',
         image: null,
-        result: 'a',
         answers: [
             {
                 id: 1,
@@ -33,7 +32,6 @@ export class EvaluationService {
         id: 2,
         question: 'Este sistema numérico tiene como base al número 16 y a la vez emplea números sustituidos por letras, siendo: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, y F.',
         image: null,
-        result: 'b',
         answers: [
             {
                 id: 1,
@@ -56,7 +54,6 @@ export class EvaluationService {
         id: 3,
         question: 'La conversión del número 7010 a binario es: 10001002.',
         image: null,
-        result: 'a',
         answers: [
             {
                 id: 1,
@@ -74,7 +71,6 @@ export class EvaluationService {
         id: 4,
         question: 'Cuál es el equivalente decimal del numero 1101.1112',
         image: null,
-        result: 'b',
         answers: [
             {
                 id: 1,
@@ -97,7 +93,6 @@ export class EvaluationService {
         id: 5,
         question: 'Cuál es el equivalente octal del numero 2452.',
         image: null,
-        result: 'a',
         answers: [
             {
                 id: 1,
@@ -120,7 +115,6 @@ export class EvaluationService {
         id: 6,
         question: 'Cual es el resultado de la multiplicación entre 4278 y 568',
         image: null,
-        result: 'b',
         answers: [
             {
                 id: 1,
@@ -143,7 +137,6 @@ export class EvaluationService {
         id: 7,
         question: 'Cual es el resultado de la sig. suma.- ',
         image: '../../assets/evaluation/img1.jpg',
-        result: 'a',
         answers: [
             {
                 id: 1,
@@ -166,7 +159,6 @@ export class EvaluationService {
         id: 8,
         question: 'Es un algoritmo que sirve para multiplicar (y dividir) números binarios con signo de manera rápida y sencilla en complemento a dos.',
         image: null,
-        result: 'c',
         answers: [
             {
                 id: 1,
@@ -188,7 +180,6 @@ export class EvaluationService {
         id: 9,
         question: 'Que tipo de suma es la siguiente:',
         image: '../../assets/evaluation/img2.jpg',
-        result: 'b',
         answers: [
             {
                 id: 1,
@@ -216,7 +207,6 @@ export class EvaluationService {
         id: 10,
         question: 'Cual es el resultado de la siguiente multiplicación hexadecimal: ',
         image: '../../assets/evaluation/img3.jpg',
-        result: 'c',
         answers: [
             {
                 id: 1,
@@ -244,7 +234,7 @@ export class EvaluationService {
 
   constructor() { }
 
-  getQuestions(){
+  getQuestions(): any[]{
     return this.questions;
   }
 }

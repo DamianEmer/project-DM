@@ -1,23 +1,36 @@
 <div class="container" *ngIf="finish == true">
+
   <div class="container__question">
     <h4>{{question.question}}</h4>
+
     <div class="question--image" *ngIf="question.image != null">
-      <img src="{{question.image}}"/>
+      <img src="{{question.image}}" />
     </div>
-    <div class="question__answers" *ngFor="let a of question.answers">
+
+    <div class="question__answers">
+
       <div class="answers-answer">
-        <form [formGroup]="form" (ngSubmit)="nextQuestion()">
-          <input type="checkbox" id="answer" value="{{a.answer}}"/>
-          <label>{{a.letter}} - {{a.answer}}</label>
+        <form [formGroup]="formAnswers" (ngSubmit)="nextQuestion(formAnswers.value)">
+          <div formArrayName="answers" *ngFor="let answer of getAnswers.controls; let i = index">
+            <input type="checkbox" [formControlName]="i" id="answer" value="{{question.answers[i].letter}}" />
+            <label>{{i}} -- {{question.answers[i].letter}} - {{question.answers[i].answer}}</label>
+          </div>
+          <button class="btn btn--next" type="submit">Siguiente</button>
         </form>
       </div>
+
     </div>
   </div>
+
   <div class="question__actions">
     <button class="btn btn--cancel">Cancelar</button>
-    <button class="btn btn--next" (click)="nextQuestion(1)">Siguiente</button>
-  </div>  
+    <!-- <button class="btn btn--next" (click)="nextQuestion(formAnswers.value)">Siguiente</button> -->
+  </div>
+
 </div>
 <div class="container" *ngIf="finish == false">
   <h1>Termino la evaluacion...</h1>
+  <ul>
+    <li *ngFor="let s of selects; let i = index;">P-{{i+1}} : {{s.id}}</li>
+  </ul>
 </div>
