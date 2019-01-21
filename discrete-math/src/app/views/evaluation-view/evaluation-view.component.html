@@ -1,5 +1,5 @@
 <div class="container" *ngIf="!finish && next != 10">
-  <h1>Comenzar evaluacion</h1>
+  <h1>Comenzar evaluación</h1>
   <button class="btn-start" (click)="start()">Comenzar</button>
 </div>
 
@@ -20,7 +20,7 @@
             <input type="checkbox" [formControlName]="i" id="answer" value="{{question.answers[i].letter}}" />
             <label>{{question.answers[i].letter}} - {{question.answers[i].answer}}</label>
           </div>
-          <button *ngIf="next<10" type="submit">Siguiente</button>
+          <button type="submit">Siguiente</button>
         </form>
       </div>
 
@@ -28,13 +28,14 @@
   </div>
 
   <div class="question__actions">
-    <button class="btn btn--cancel">Cancelar</button>
+    <button class="btn btn--cancel" style="background-color:rgb(128, 17, 17)" [routerLink]="['','home']">Cancelar</button>
     <!-- <button class="btn btn--next" (click)="nextQuestion(formAnswers.value)">Siguiente</button> -->
   </div>
 
 </div>
 <div class="container" *ngIf="!finish && next==10">
-  <h1>Termino la evaluacion...</h1>
+  <h1>Termino la evaluación</h1>
+  <h4>Resultados: </h4>
   <ul>
     <li *ngFor="let s of respuestas; let i = index;">P-{{i+1}} : {{s.answer}}</li>
   </ul>

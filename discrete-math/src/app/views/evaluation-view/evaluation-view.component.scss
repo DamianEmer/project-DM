@@ -63,9 +63,9 @@
         width: 100%;
         height: 150px;
 
-        form{
-            width: 100%;
-            height: 150px;
+        form {
+          width: 100%;
+          height: 150px;
         }
 
         button {
@@ -73,7 +73,18 @@
           height: 35px;
           background-color: #0d5cac;
           color: #fff;
-          margin: 40px 0 0 70%
+          margin: 40px 0 0 70%;
+
+          background-color: #1976d2;
+          border: 1px solid #1976d2;
+          color: #fff;
+          box-shadow: 10px 10px 15px rgb(100, 100, 100);
+    
+          &:hover {
+            cursor: pointer;
+            background-color: #0d5cac;
+            box-shadow: 10px 10px 10px #444444;
+          }
         }
       }
     }
@@ -117,10 +128,18 @@
   }
 
   .btn-start {
-    width: 160px;
-    height: 60px;
-    background-color: #0d5cac;
+    background-color: #1976d2;
+    border: 1px solid #1976d2;
     color: #fff;
+    width: 170px;
+    height: 40px;
     font-size: 16px;
+    box-shadow: 10px 10px 15px rgb(100, 100, 100);
+
+    &:hover {
+      cursor: pointer;
+      background-color: #0d5cac;
+      box-shadow: 10px 10px 10px #444444;
+    }
   }
 }
