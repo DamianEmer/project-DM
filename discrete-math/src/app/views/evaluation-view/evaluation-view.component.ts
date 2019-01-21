@@ -21,70 +21,90 @@ export class EvaluationViewComponent implements OnInit {
 
   selects: any[] = []; // Almacenara todas las respuestas seleccionadas
 
-  constructor(private fb: FormBuilder, private evService: EvaluationService) {
+  respuestas: any[]; // Almacena resultados finales (correcto o incorrecto)
 
-    this.formAnswers = this.fb.group({
-      answers: this.buildAnswers(0)
-    })
+  constructor(private fb: FormBuilder, private evService: EvaluationService) {
+    this.buildAnswers(0);
   }
 
   ngOnInit() {
     this.questions = this.evService.getQuestions();
-    this.finish = true;
+    this.finish = false;
     this.next = 0;
+  }
+
+  // Construye la lista de check's
+  buildAnswers(i: number) {
+    const questions = this.evService.getQuestions();
+    const list = questions[i].answers.map(obj => {
+      return this.fb.control(false);
+    })
+    this.formAnswers = this.fb.group({
+      answers: this.fb.array(list)
+    })
+  }
+
+  //Comienza la evaluacion
+  start() {
+    this.finish = true;
     this.question = this.questions[0];
   }
 
-  buildAnswers(i: number): FormArray {
-    console.log('ite: ', i);
-    const questions = this.evService.getQuestions();
-    const list = questions[i].answers.map(obj => {
-      console.log(obj)
-      return this.fb.control(false);
-    })
-    return this.fb.array(list);
-  }
-
-  nextQuestion(form): any {
+  // Pasa de pregunta a pregunta
+  nextQuestion(form?): any {
+    this.next++;
     if (this.next === 10) {
       this.finish = false;
-      console.log('finalizo la evaluacion ', this.selects);
+      this.results(this.selects);
       return 0;
-    }
-    //console.log('next: ', this.next);
-    if(this.next == 2){
-      this.next++;
     }
     this.question = this.questions[this.next];
     this.buildAnswers(this.next);
-    console.log("pregunta",this.question);
-    //console.log("controls: ",this.getAnswers.controls);
+    this.optionSelected(form);
+    this.formAnswers.reset();
+  }
+
+  // Obtiene los valores de la lista de check's de la preguta y los guarda
+  optionSelected(form: any){
     const seleccionado = Object.assign({}, {
       answers: form.answers.map((value, i) => {
-        //console.log(`i: ${i} -> value: ${value}`);
         return {
           id: this.questions[i].id,
           value
         }
       })
     })
-    //console.log(seleccionado);
     const seleccionados: any[] = [];
     seleccionados.push(seleccionado);
-    this.guardar(seleccionados);
-    this.formAnswers.reset();
-    this.next++;
+    this.save(seleccionados);
   }
 
-  guardar(selecionado: any[]) {
-    selecionado.map(select => {
-      
+  // Guarda exclusivamente el ID de la opcion seleccionada
+  save(selects: any[]) {
+    selects.map(select => {
       select.answers.map((opcion) => {
-        //console.log('save', opcion);
         if (opcion.value)
           this.selects.push(opcion)
       })
     });
+  }
+
+  // Guarda los resultados finales de la evaluación
+  results(arr: any[]) {
+    this.respuestas =
+      arr.map((select, i) => {
+        if (select.id == this.evService.getAnswersCorrect()[i]) {
+          return {
+            idQ: i,
+            answer: 'correct'
+          }
+        } else {
+          return {
+            idQ: i,
+            answer: 'incorrect'
+          }
+        }
+      })
   }
 
   get getAnswers() {
