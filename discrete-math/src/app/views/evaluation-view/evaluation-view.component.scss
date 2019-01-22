@@ -76,7 +76,7 @@
           margin: 40px 0 0 70%;
 
           background-color: #1976d2;
-          border: 1px solid #1976d2;
+          border: 1px solid #1976d200;
           color: #fff;
           box-shadow: 10px 10px 15px rgb(100, 100, 100);
     
@@ -84,6 +84,11 @@
             cursor: pointer;
             background-color: #0d5cac;
             box-shadow: 10px 10px 10px #444444;
+          }
+
+          &:disabled{
+            background-color: #acb7c2;
+            box-shadow: 0px 0px 0px #d4d4d4;
           }
         }
       }
@@ -102,7 +107,7 @@
 
     .btn {
       background-color: #1976d2;
-      border: 1px solid #1976d2;
+      border: 1px solid #1976d200;
       color: #fff;
       width: 130px;
       height: 30px;
@@ -133,6 +138,7 @@
     color: #fff;
     width: 170px;
     height: 40px;
+    margin-top: 25px;
     font-size: 16px;
     box-shadow: 10px 10px 15px rgb(100, 100, 100);
 

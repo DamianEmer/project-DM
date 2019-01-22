@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EvaluationService } from 'src/app/services/evaluation.service';
-import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray, AbstractControl, Validator, ValidatorFn } from '@angular/forms';
 
 @Component({
   selector: 'app-evaluation-view',
@@ -40,8 +40,19 @@ export class EvaluationViewComponent implements OnInit {
       return this.fb.control(false);
     })
     this.formAnswers = this.fb.group({
-      answers: this.fb.array(list)
+      answers: this.fb.array(list, this.minSelectedCheckbox(1))
     })
+  }
+
+  // Validar por lo menos la seleccion de una
+  minSelectedCheckbox(min = 1){
+    const validator : ValidatorFn = (formArray: FormArray) => {
+      const totalSelected = formArray.controls
+        .map(control => control.value)
+        .reduce((prev, next)=> next? prev + next : prev, 0);
+        return totalSelected >= min ?  null  : {required: true};
+    }
+    return validator;
   }
 
   //Comienza la evaluacion
@@ -96,12 +107,12 @@ export class EvaluationViewComponent implements OnInit {
         if (select.id == this.evService.getAnswersCorrect()[i]) {
           return {
             idQ: i,
-            answer: 'correct'
+            answer: 'Correcto'
           }
         } else {
           return {
             idQ: i,
-            answer: 'incorrect'
+            answer: 'Incorrecto'
           }
         }
       })

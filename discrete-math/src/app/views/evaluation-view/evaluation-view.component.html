@@ -1,5 +1,7 @@
 <div class="container" *ngIf="!finish && next != 10">
   <h1>Comenzar evaluación</h1>
+  <br>
+  <h5>Instrucciones: Seleccionar la respuesta correcta</h5>
   <button class="btn-start" (click)="start()">Comenzar</button>
 </div>
 
@@ -20,7 +22,7 @@
             <input type="checkbox" [formControlName]="i" id="answer" value="{{question.answers[i].letter}}" />
             <label>{{question.answers[i].letter}} - {{question.answers[i].answer}}</label>
           </div>
-          <button type="submit">Siguiente</button>
+          <button type="submit" [disabled]="!formAnswers.valid">Siguiente</button>
         </form>
       </div>
 
