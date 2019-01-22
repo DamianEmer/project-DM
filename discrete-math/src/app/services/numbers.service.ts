@@ -32,6 +32,7 @@ export class NumbersService {
     { f0: 'C0', f1: 'C1', f2: 'C2', f3: 'C3', f4: 'C4', f5: 'C5', f6: 'C6', f7: 'C7', f8: 'C8', f9: 'C9', f10:'CA', f11:'CB', f12:'CC', f13:'CD', f14:'CE', f15:'CF' },
     { f0: 'D0', f1: 'D1', f2: 'D2', f3: 'D3', f4: 'D4', f5: 'D5', f6: 'D6', f7: 'D7', f8: 'D8', f9: 'D9', f10:'DA', f11:'DB', f12:'DC', f13:'DD', f14:'DE', f15:'DF' },
     { f0: 'E0', f1: 'E1', f2: 'E2', f3: 'E3', f4: 'E4', f5: 'E5', f6: 'E6', f7: 'E7', f8: 'E8', f9: 'E9', f10:'EA', f11:'EB', f12:'EC', f13:'ED', f14:'EE', f15:'EF' },
+    { f0: 'F0', f1: 'F1', f2: 'F2', f3: 'F3', f4: 'F4', f5: 'F5', f6: 'F6', f7: 'F7', f8: 'F8', f9: 'F9', f10:'FA', f11:'FB', f12:'FC', f13:'FD', f14:'FE', f15:'FF' }
   ]
 
   steps: any [] = [

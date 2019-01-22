@@ -1,32 +1,10 @@
 <div class="container">
   <div class="container__conversor">
     <h1>{{name}}</h1>
-    <span>{{isHexa ? 'Hexadecimal' : 'Octal'}} {{currentNumber}} = Decimal {{parseInt(currentNumber, isHexa ? 16 : 8)}}</span>
-    <button class="btn--info" mat-stroked-button (click)="openDialog()">Conocer más...</button>
+    <span style="width:auto">{{isHexa ? 'Hexadecimal' : 'Octal'}} {{currentNumber}} = Decimal {{parseInt(currentNumber, isHexa ? 16 : 8)}}</span>
   </div>
-  <br>
   <div class="container__table">
     <table class="table">
-      <thead class="table__header">
-        <tr class="table__header--titles">
-          <th>|</th>
-          <th>|</th>
-          <th>|</th>
-          <th>|</th>
-          <th>|</th>
-          <th>|</th>
-          <th>|</th>
-          <th>|</th>
-          <th *ngIf="isHexa">|</th>
-          <th *ngIf="isHexa">|</th>
-          <th *ngIf="isHexa">|</th>
-          <th *ngIf="isHexa">|</th>
-          <th *ngIf="isHexa">|</th>
-          <th *ngIf="isHexa">|</th>
-          <th *ngIf="isHexa">|</th>
-          <th *ngIf="isHexa">|</th>
-        </tr>
-      </thead>
       <tbody  *ngFor="let r of dataSource"
               app-item-board [row]="r"
               [show]="isHexa"

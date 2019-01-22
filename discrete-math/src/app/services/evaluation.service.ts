@@ -8,7 +8,7 @@ export class EvaluationService {
     questions: any = [
         {
             id: 1,
-            question: ' De qué sistema de numeración es la sig. definición. El sistema decimal es el sistema de numeración posicional con base b=10, con 10 dígitos de notados por los símbolos: 0, 1, 2, 3, 4, 5, 6, 7, 8,9 ',
+            question: ' De qué sistema de numeración es la sig. definición. El sistema decimal es el sistema de numéración posicional con base b=10, con 10 dígitos de notados por los símbolos: 0, 1, 2, 3, 4, 5, 6, 7, 8,9 ',
             image: null,
             answers: [
                 {
@@ -69,7 +69,7 @@ export class EvaluationService {
         },
         {
             id: 4,
-            question: 'Cuál es el equivalente decimal del numero 1101.1112',
+            question: '¿Cuál es el equivalente decimal del número 1101.1112?',
             image: null,
             answers: [
                 {
@@ -91,7 +91,7 @@ export class EvaluationService {
         },
         {
             id: 5,
-            question: 'Cuál es el equivalente octal del numero 2452.',
+            question: '¿Cuál es el equivalente octal del número 2452?',
             image: null,
             answers: [
                 {
@@ -113,7 +113,7 @@ export class EvaluationService {
         },
         {
             id: 6,
-            question: 'Cual es el resultado de la multiplicación entre 4278 y 568',
+            question: '¿Cuál es el resultado de la multiplicación entre 4278 y 568?',
             image: null,
             answers: [
                 {
@@ -135,7 +135,7 @@ export class EvaluationService {
         },
         {
             id: 7,
-            question: 'Cual es el resultado de la sig. suma.- ',
+            question: '¿Cuál es el resultado de la sig. suma.-? ',
             image: '../../assets/evaluation/img1.jpg',
             answers: [
                 {
@@ -168,17 +168,17 @@ export class EvaluationService {
                 {
                     id: 2,
                     letter: 'b',
-                    answer: 'Algoritmo De La División Binaria'
+                    answer: 'Algoritmo de la división binaria'
                 },
                 {
                     id: 3, letter: 'c',
-                    answer: 'Algoritmo De Booth'
+                    answer: 'Algoritmo de Booth'
                 }
             ]
         },
         {
             id: 9,
-            question: 'Que tipo de suma es la siguiente:',
+            question: '¿Qué tipo de suma es la siguiente?',
             image: '../../assets/evaluation/img2.jpg',
             answers: [
                 {
@@ -205,7 +205,7 @@ export class EvaluationService {
         },
         {
             id: 10,
-            question: 'Cual es el resultado de la siguiente multiplicación hexadecimal: ',
+            question: '¿Cuál es el resultado de la siguiente multiplicación hexadecimal?',
             image: '../../assets/evaluation/img3.jpg',
             answers: [
                 {

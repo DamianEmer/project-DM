@@ -37,6 +37,10 @@ export class ConverterFormComponent implements OnInit {
 
   @Input() name: string;
 
+  btnShow: boolean;
+
+  numberStep: any[];
+
   constructor(private dataSharedService: DataSharedService,
     private numberService: NumbersService,
     private fb: FormBuilder) {
@@ -52,24 +56,26 @@ export class ConverterFormComponent implements OnInit {
       this.tab = tab;
       this.onSelectTab2(this.tab);
     })
+
+    this.dataSharedService.dataNumberShared$.subscribe(number => {
+      let steps = this.numberService.getSteps().filter(val => val.from === this.name);
+      this.numberStep = steps.filter(data => data.number === number);
+      if (this.numberStep.length >= 1)
+        this.btnShow = (this.numberStep[0].number) ? true : false;
+    })
   }
 
   showSteps2(): void {
     this.stepByStep = (this.stepByStep === true) ? false : true;
-    this.dataSharedService.dataNumberShared$.subscribe(number => {
-      let steps = this.numberService.getSteps().filter(val => val.from === this.name);
-      let numberStep = steps.filter(data => data.number == number);
-      //Object.keys(steps).forEach(key => Object.keys(steps[key]).forEach(value=> console.log(steps[key][value], value)));
-      if(numberStep.length != 0){
-        numberStep[0].type.map(val => {
-          console.log(`type: ${val.type} - tab: ${this.tab}`);
-          if(val.type == this.tab){
-            console.log(val.src);
-            this.imageSteps = val.src;
-          }
-        })
-      }
-    });
+    if (this.numberStep.length != 0) {
+      this.numberStep[0].type.map(val => {
+        console.log(`type: ${val.type} - tab: ${this.tab}`);
+        if (val.type == this.tab) {
+          console.log(val.src);
+          this.imageSteps = val.src;
+        }
+      })
+    }
   }
 
   // Metodo para accidonar btn de conversion en el formulario

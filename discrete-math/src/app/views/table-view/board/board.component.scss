@@ -14,8 +14,8 @@
     align-items: center;
     width: 80%;
     padding: 2px 15px;
-    height: 70px; 
-    margin: 15px auto;
+    height: 50px; 
+    margin: 5px auto;
     text-transform: uppercase;
 
     .btn--info{
@@ -39,13 +39,14 @@
   .container__table{   
     //background-color: #4c5d6e;
     width: 95%;
-    margin: 20px auto; 
+    height: 450px;
+    margin: 0px auto; 
     padding: 15px;
     box-shadow: 15px 25px 50px rgb(185, 185, 185);
 
     .table{
       width: 95%;
-      margin: auto;
+      margin: 0px auto;
       border-collapse: collapse;
     }
   }

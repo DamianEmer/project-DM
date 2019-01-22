@@ -61,8 +61,8 @@ export class LessonsService {
                 text:   "Para convertir de un decimal a binario, éste número se divide entre dos hasta que el cociente nos de cero; el residuo es el número binario, tomándolo de derecha a izquierda (en el sentido de la flecha)."+
                         " Ejemplo.-"+
                         "Convertir el número 7010 a binario."+               
-                        "El resultado es: 10001102"+
-                        "También podemos hacerlo de esta manera, en donde el último número es el primero, siguiendo la dirección de la flecha.",
+                        " El resultado es: 10001102"+
+                        " También podemos hacerlo de esta manera, en donde el último número es el primero, siguiendo la dirección de la flecha.",
                 images: [
                     {
                         id: 1,
@@ -168,18 +168,18 @@ export class LessonsService {
     },
     {
         id: 3,
-        title: 'Operaciones Basicas Aritmeticas',
+        title: 'Operaciones básicas aritmáticas',
         content: [
             {
                 id: 3.1,
-                subtitle: 'Suma Binaria',
+                subtitle: 'Suma binaria',
                 text: '0 + 0 = 0 \n 0 + 1 = 1 \n 1 + 0 = 1 \n 1 + 1 = 0 acarreo 1',
                 images: null,
                 example: null                
             },
             {
                 id: 3.2,
-                subtitle: 'Resta Binaria',
+                subtitle: 'Resta binaria',
                 text: "El algoritmo de la resta en sistema binario es el mismo que en el sistema decimal. Pero conviene repasar la operación de restar en decimal para comprender la operación binaria, que es más sencilla. Los términos que intervienen en la resta se llaman minuendo, sustraendo y diferencia. \n Las restas básicas 0 - 0, 1 - 0 y 1 - 1 son evidentes:",
                 images: null,
                 example: "0 - 0 = 0 \n 1 - 0 = 1 \n 1 - 1 = 0 \n 0 - 1 = 1 (se transforma en 10 - 1 = 1) \n La resta 0 - 1 se resuelve, igual que en el sistema decimal, tomando una unidad prestada de la posición siguiente: 0 - 1 = 1 y me llevo 1, lo que equivale a decir en el sistema decimal, 2 - 1 = 1."
@@ -193,7 +193,7 @@ export class LessonsService {
             },
             {
                 id: 3.4,
-                subtitle: 'Division Binaria',
+                subtitle: 'División binaria',
                 text: "La división en binario es similar a la división en decimal, la única diferencia es que a la hora de hacer las restas, dentro de la división, estas deben ser realizadas en binario.",
                 images: null,
                 examples: null
@@ -207,35 +207,35 @@ export class LessonsService {
             },
             {
                 id: 3.6,
-                subtitle: 'Complemento Decimales',
+                subtitle: 'Complemento decimales',
                 text: "El complemento a nueves de un número decimal A se obtiene restando cada digito A de 9, y el complemento a dieses de A es su complemento a nueves mas uno.",
                 images: null,
                 examples: "Ejemplo: \n Dado A= 1408, su complemento a nueves es 8591 y el complemento a dieses es 8592, es decir: \n 9999-A=9999-1408=8591 \n (9999-1408) +1=8591+1=8592 \n Sean A y B dos enteros decimales con cuatro dígitos, suponiendo que A es menor que B, la diferencia Y = B-A se puede escribir como: \n Y=B-A+(9999+1-10000)=B+[(9999-A)+1]-10000"
             },
             {
                 id: 3.7,
-                subtitle: 'Complemento Binario',
+                subtitle: 'Complemento binario',
                 text: "El complemento a unos de un número binario A se obtiene restando cada digito A de 1, y el complemento a doses de A es su complemento a unos más 1",
                 images: null,
                 examples: null
             },
             {
                 id: 3.8,
-                subtitle: 'Resta de Octales',
+                subtitle: 'Resta de octales',
                 text: "Para restar octales usaremos la tabla 1. para el siguiente ejemplo, al pedir 1 al 4 éste queda convertido en 11 octal, , si se observa en la tabla el nueve decimal es igual a 11 octal, entonces 9 menos 5 es igual a 4 y llevamos 1 quedando el cuatro convertido en 13 su equivalente es 11, menos 6 es igual 5 y así sucesivamente hasta terminar.",
                 images: null,
                 examples: null
             },
             {
                 id: 3.9,
-                subtitle: 'Multiplicación de Octales',
+                subtitle: 'Multiplicación de octales',
                 text: "Recordemos que el sistema octal va del cero al 7, por lo tanto no puede existir un número ocho, tenemos que usar la tabla 1 para poder hacer la multiplicación y luego la suma. Dos por uno es dos, dos por tres es igual 6, estos dos primeros números no rebasan el sistema, pero 2 por 4 si, por consiguiente se busca su equivalente que es el 10, entonces es cero y llevamos 1, 2 por 6 es igual 12 más 1 que llevamos 13 su equivalente es 15 y así las dos cifras siguientes y proceder a hacer la suma.",
                 images: null,
                 examples: null
             },
             {
                 id: 3.10,
-                subtitle: 'Resta de Haxadecimales',
+                subtitle: 'Resta de hexadecimales',
                 text: "El 13 hexadecimal es igual a 19 decimal, entonces 19 menos 13 (que es a lo que equivale D igual a 6 y llevamos 1, el 4 queda disminuido en una unidad, nuevamente 13 es igual a 19 menos 12 igual 7, el 8 menos 1, pasa a ser 17 hexadecimal que equivale a 23 menos 11 (B = 11) igual C que equivale a 12, el cinco queda convertido en 4 menos 2 igual a 2. ",
                 images: null,
                 examples: null
@@ -244,11 +244,11 @@ export class LessonsService {
     },
     {
         id: 4,
-        title: 'Algoritmo de Booth \n (Multiplicación Binaria)',
+        title: 'Algoritmo de Booth \n (multiplicación binaria)',
         content: [
             {
                 id: 4.1,
-                subtitle: 'Algoritmos de booth - multiplicacion binaria',
+                subtitle: 'Algoritmos de booth - multiplicación binaria',
                 text:   "El algoritmo de booth es un algoritmo que sirve para multiplicar (y dividir) números binarios con signo de manera rápida y sencilla en complemento a dos. Aqui explico de manera detallada el funcionamiento de ese algoritmo y muestro una implementación del mismo para micro controladores PIC."+
                         "La manera en que se representan los números binarios negativos es mediante su complemento a dos. El complemento a uno consiste en invertir el valor de cada bit, esto es que si se tiene el número 5 binario b'00000101′ su complemento a uno sería b'11111010′. Una vez teniendo el complemento a 1 para obtener el complemento a dos simplemente se le debe sumar un 1, asi que se tiene b'11111010 + 1′ de modo que el complemento a dos del número 5 binario es b'11111011′."+
                         "Ese es un dato muy importante ya que de ese modo se representan los números binarios negativos y el complemento a dos es parte del algoritmo de multiplicación de Booth. También es importante explicar que utilizando números de 8 bits el número mayor que se puede representar en complemento a dos es 127 y -127 que en binario son b'01111111′ y b'1000001′ respectivamente."+
@@ -265,12 +265,12 @@ export class LessonsService {
                         "\n 3.0000 0010 1011 111[0 1] P=P+A \n 0000 0001 0101 111[1 0] -> \n Ahora los últimos dos dígitos son [1 0], se realiza la suma P=P+S y después el corrimiento a la derecha: \n 4.1111 1100 0101 111[1 0] P=P+S \n 1111 1110 0010 111[1 1] ->\n"+                        
                         "Los últimos dos dígitos [1 1] al igual que cuando fueron [0 0] indican que solo se debe realizar el corrimiento a la derecha: \n 5.1111 1111 0001 011[1 1] -> \n De nuevo se tiene [1 1] por lo que se realiza únicamente el corrimiento y en lo sucesivo se tendrá siempre el mismo caso: \n 6. 1111 1111 1000 101[1 1] -> \n 7. 1111 1111 1100 010[1 1] -> \n 8. 1111 1111 1110 0010 [1] ->\n"+
                         "Después de 8 iteraciones termina el algoritmo, se desecha el bit menos significativo (el bit extra) y se obtiene el producto de la multiplicación: \n 5*(-6) = 1111 1111 1110 0010 = -30 \n"+
-                        "Cabe mencionar que el numero de iteraciones que realiza el algoritmo es igual N, que es el numero de bits de los factores y el resultado final es igual a 2N, en este caso se multiplican factores de 8 bits por lo que el resultado final es de 16. Esta es la manera en la que funciona el algoritmo. Solamente hay que tener en cuenta que al realizar los corrimientos a la derecha se debe mantener siempre el bit más significativo, esto es que si se tiene '1101′ se realiza el corrimiento el resultado será '1110′ y no '0110′."
+                        "Cabe mencionar que el numero de iteraciones que realiza el algoritmo es igual N, que es el número de bits de los factores y el resultado final es igual a 2N, en este caso se multiplican factores de 8 bits por lo que el resultado final es de 16. Esta es la manera en la que funciona el algoritmo. Solamente hay que tener en cuenta que al realizar los corrimientos a la derecha se debe mantener siempre el bit más significativo, esto es que si se tiene '1101′ se realiza el corrimiento el resultado será '1110′ y no '0110′."
             },
             {
                 id: 4.2,
-                subtitle: 'Implementacion del algoritmo de Booth en MPASM',
-                text:     "Aplicando los pasos que acabo de explicar realice una implementación del algoritmo de Booth para la multiplicación en MPASM para realizar multiplicaciones de números signados de 8 bits en micro controladores PIC 16F.\n"+
+                subtitle: 'Implementación del algoritmo de Booth en MPASM',
+                text:     "Aplicando los pasos que acabo de explicar realicé una implementación del algoritmo de Booth para la multiplicación en MPASM para realizar multiplicaciones de números signados de 8 bits en micro controladores PIC 16F.\n"+
                           "El algoritmo implementado sigue los mismos pasos descritos, compara los últimos dos dígitos del factor P y realiza alguna de las acciones posibles para después llevar a cabo el corrimiento. Como mencione en un principio el algoritmo solo puede multiplicar números que van del -127 al 127 y el resultado lo da a través de los registros RESULTADOH: RESULTADOL.\n"+
                           "Para poder utilizar esta rutina (multibooth) se deben declarar los registros A1, A2, A3, S1, S2, S3, P1, P2, P3, MULTIPLICANDO, MULTIPLICADOR, RESULTADOH, RESULTADOL y CONT.\n"+
                           "En los registros RESULTADOH :RESULTADOL se muestra el valor positivo del resultado y si este fuera negativo se activa la bandera SIGNO (bit 0 del registro A3) para indicar que se trata de un numero negativo.\n"+

@@ -2,6 +2,7 @@
     width: 85%;
     height: 100vh;
     margin: 25px auto;
+    font-family: 'Montserrat', sans-serif;
 
     h1 {
         text-align: end;
@@ -11,6 +12,10 @@
     section{
         width: 95%;
         margin: 8% auto;
+    }
+
+    mat-card{
+        font-family: 'Montserrat', sans-serif;
     }
 }
 
